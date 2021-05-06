@@ -6,6 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
+    "export": "next export",
     "build-css": "NODE_ENV=production tailwind build styles/source.css -o styles/dist.css"
   },
   "dependencies": {

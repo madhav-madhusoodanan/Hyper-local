@@ -7,8 +7,8 @@ class ConductTransaction extends Component {
   componentDidMount() {
   }
 
-  updateRecipient = (event) => {
-    this.setState({ recipient: event.target.value });
+  updateProduct = (event) => {
+    this.setState({ product: event.target.value });
   };
 
   updateAmount = (event) => {
@@ -16,7 +16,7 @@ class ConductTransaction extends Component {
   };
 
   // conductTransaction = () => {
-  //   const { recipient, amount } = this.state;
+  //   const { product, amount } = this.state;
   //   fetch(`${document.location.origin}/api/blocks`)
   //     .then((response) => response.json())
   //     .then((chain) => (this.props.entity.blockchain = chain))
@@ -30,12 +30,12 @@ class ConductTransaction extends Component {
   //         if (transaction) {
   //           transaction.update({
   //             senderWallet: this.props.entity.wallet,
-  //             recipient,
+  //             product,
   //             amount,
   //           });
   //         } else {
   //           transaction = this.props.entity.wallet.createTransaction({
-  //             recipient,
+  //             product,
   //             amount,
   //             chain: this.props.entity.blockchain.chain,
   //           });
@@ -64,21 +64,21 @@ class ConductTransaction extends Component {
   render() {
     return (
       <>
-        <h3 className="text-gray-600 my-8 px-auto">Conduct a Transaction</h3>
+        <div className="mx-auto w-min">
+		<h3 className="text-gray-600 my-8 text-2xl"><div className="mx-auto">Search a product</div></h3>
         <br />
-        <div className="px-auto">
         <FormGroup className="my-8">
           <FormControl
-            className="rounded-full px-6 py-2 bg-gray-200 text-gray-600"
+            className="rounded-full px-6 py-2 bg-gray-200 text-gray-600 text-xl mx-auto"
             input="text"
-            placeholder="recipient"
-            value={this.state.recipient}
-            onChange={this.updateRecipient}
+            placeholder="Type type ..."
+            value={this.state.product}
+            onChange={this.updateProduct}
           />
         </FormGroup>
         <FormGroup className="my-8">
           <FormControl
-            className="rounded-full px-6 py-2 bg-gray-200 text-gray-600"
+            className="rounded-full px-6 py-2 bg-gray-200 text-gray-600 text-xl"
             input="number"
             placeholder="amount"
             value={this.state.amount}
@@ -88,7 +88,7 @@ class ConductTransaction extends Component {
         <div>
           <Button
             bsstyle="danger"
-            className="bg-gray-100 rounded-full px-8 py-2 text-gray-700 no-underline hover:no-underline hover:bg-red-600 hover:text-white"
+            className="text-xl bg-gray-100 rounded-full px-8 py-2 text-gray-700 no-underline hover:no-underline hover:bg-red-600 hover:text-white"
             onClick={this.conductTransaction}
           >
             Submit
