@@ -5,11 +5,12 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start",
+    "start": "next start -p $PORT",
     "export": "next export",
     "build-css": "NODE_ENV=production tailwind build styles/source.css -o styles/dist.css"
   },
   "dependencies": {
+    "heroku": "^7.2.0",
     "next": "10.2.0",
     "react": "17.0.2",
     "react-bootstrap": "^1.5.2",
