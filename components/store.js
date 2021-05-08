@@ -1,11 +1,10 @@
 import { Component } from "react";
-import { FormGroup, FormControl, Button } from "react-bootstrap";
 
 class ConductTransaction extends Component {
-  state = { recipient: "", amount: 0, knownAddresses: [] };
+  state = { recipient: "", amount: 0, products: [{cost: 10, name: "Product", shop: "Farsi Street", quantity: 4},
+{cost: 10, name: "Product", shop: "Farsi Street"},{cost: 10, name: "Product", shop: "Farsi Street", quantity: 4}] };
 
-  componentDidMount() {
-  }
+  componentDidMount() {}
 
   updateProduct = (event) => {
     this.setState({ product: event.target.value });
@@ -64,36 +63,12 @@ class ConductTransaction extends Component {
   render() {
     return (
       <>
-        <div className="mx-auto w-min">
-		<h3 className="text-gray-600 my-8 text-2xl"><div className="mx-auto">Search a product</div></h3>
-        <br />
-        <FormGroup className="my-8">
-          <FormControl
-            className="rounded-full px-6 py-2 bg-gray-200 text-gray-600 text-xl mx-auto"
-            input="text"
-            placeholder="Type type ..."
-            value={this.state.product}
-            onChange={this.updateProduct}
-          />
-        </FormGroup>
-        <FormGroup className="my-8">
-          <FormControl
-            className="rounded-full px-6 py-2 bg-gray-200 text-gray-600 text-xl"
-            input="number"
-            placeholder="amount"
-            value={this.state.amount}
-            onChange={this.updateAmount}
-          />
-        </FormGroup>
-        <div>
-          <Button
-            bsstyle="danger"
-            className="text-xl bg-gray-100 rounded-full px-8 py-2 text-gray-700 no-underline hover:no-underline hover:bg-red-600 hover:text-white"
-            onClick={this.conductTransaction}
-          >
-            Submit
-          </Button>
-        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8 w-3/4 sm:w-5/6 mx-auto">
+          {this.state.products.map((product) => (
+            <div className="m-2 rounded-xl w-full h-48 border-red-600 transition duration-1000 border-2 hover:border-4 ">
+		{product.name + "\n" + product.cost + "\n" + product.shop}
+	    </div>
+          ))}
         </div>
       </>
     );
