@@ -2,7 +2,14 @@ import ConductTransaction from "../components/store";
 import { useRouter } from "next/router";
 import { useState } from "react";
 import { FormGroup, FormControl, Button } from "react-bootstrap";
-
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faShoppingBasket,
+  faMoneyBillWave,
+  faBolt,
+  faUser,
+  faHospitalSymbol
+} from "@fortawesome/free-solid-svg-icons";
 const Store = () => {
   const router = useRouter();
   const homeButton = () => {
@@ -27,7 +34,11 @@ const Store = () => {
                 className="cursor-pointer text-xl bg-white rounded-full h-11 w-11 text-gray-700 no-underline hover:no-underline transition-all duration-150 hover:bg-red-600 hover:text-white border-2 border-red-600"
                 onClick={Search}
               >
-                
+                <FontAwesomeIcon
+              icon={faHospitalSymbol}
+              size="2x"
+              className="mx-auto text-red-400"
+            />	
               </div>
             </div>
             <div className="mx-2">
@@ -61,10 +72,14 @@ const Store = () => {
             </div>
             <div className="mx-2">
               <div
-                className="cursor-pointer text-xl bg-white rounded-full h-11 w-11 mr-4 text-gray-700 no-underline hover:no-underline transition-colors duration-150 hover:bg-red-600 hover:text-white border-red-600 border-2"
+                className="grid items-center cursor-pointer text-xl bg-white rounded-full h-11 w-11 mr-4 text-gray-700 no-underline hover:no-underline transition-colors duration-150 hover:bg-red-600 hover:text-white border-red-600 border-2"
                 onClick={homeButton}
               >
-                
+                <FontAwesomeIcon
+              icon={faUser}
+              size="1x"
+              className="mx-auto text-red-400"
+            />
               </div>
             </div>
           </div>
