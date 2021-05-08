@@ -5,8 +5,8 @@ import { FormGroup, FormControl, Button } from "react-bootstrap";
 
 const Store = () => {
   const router = useRouter();
-  const homeButton = (event) => {
-    router.push("/store");
+  const homeButton = () => {
+    router.push("/");
   };
   const [SearchTerm, setSearchTerm] = useState("");
   const updateSearch = (event) => {
